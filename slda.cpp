@@ -996,7 +996,7 @@ void slda::infer_only(corpus * c, const settings * setting, const char * directo
             num_correct ++;
 
         fprintf(likelihood_file, "%5.5f\n", likelihood);
-        fprintf(inf_label_file, "%d\n", label);
+        fprintf(inf_label_file, "%.3f\n", score);
     }
 
     printf("average accuracy: %.3f\n", (double)num_correct / (double) c->num_docs);
