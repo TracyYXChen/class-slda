@@ -985,6 +985,7 @@ void slda::infer_only(corpus * c, const settings * setting, const char * directo
             for (k = 0; k < num_topics; k ++)
             {
                 score += eta[i][k] * phi_m[k];
+                //printf("Here is phi_m %.3f", phi_m[k]);
             }
             if (score > base_score)
             {
@@ -999,7 +1000,7 @@ void slda::infer_only(corpus * c, const settings * setting, const char * directo
         fprintf(inf_label_file, "%.3f\n", score);
     }
 
-    printf("average accuracy: %.3f\n", (double)num_correct / (double) c->num_docs);
+    //printf("average accuracy: %.3f\n", (double)num_correct / (double) c->num_docs);
 
     sprintf(filename, "%s/inf-gamma.dat", directory);
     save_gamma(filename, var_gamma, c->num_docs);
